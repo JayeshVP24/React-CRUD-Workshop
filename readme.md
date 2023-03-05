@@ -37,7 +37,7 @@ const  shoppingListPre  = [
 ```
 ### Initializing Data Structure
 ```js
-// src/App.js
+// src/App.js - inside App function
 const [shoppingList, setShoppingList] =  useState([]);
 
 useEffect(() => {
@@ -47,7 +47,7 @@ useEffect(() => {
 ```
 ### Write Initial HTML
 ```js
-// src/App.js
+// src/App.js - inside return of App function
 <div  className="App">
 	<h1>Shopping list 🛒 </h1>
 	<div  className="list">
