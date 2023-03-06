@@ -1,6 +1,6 @@
 # React CRUD Workshop 🛒
 ##  Steps to run this project ⛷️
-1. `npm install -G yarn`
+1. `npm install -g yarn`
 2. `git clone https://github.com/JayeshVP24/React-CRUD-Workshop.git`
 3. `cd React-CRUD-Workshop`
 4. `yarn`
@@ -8,7 +8,7 @@
 
 ## Guide
 ### Setup new React Project
-1. `npm install -G yarn`
+1. `npm install -g yarn`
 2. `yarn create vite`
 	1. *Enter Project name*
 	2. *Select React.js*
