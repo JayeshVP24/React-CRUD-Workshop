@@ -100,7 +100,7 @@ useEffect(() => {
 }
 .item  >  span  >  button {
 	margin: 0  1rem;
-	text-align: center
+	text-align: center;
 	font-size: large;
 }
 .action {
