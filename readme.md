@@ -153,7 +153,7 @@ export  default  Item;
 ### Updating or Deleting the Item
 ```js
 // src/components/Item.jsx
-const  Item  = ({ name, quantity, setShoppingList, shoppingList }) => {
+const  Item  = ({ name, quantity, shoppingList, setShoppingList }) => {
 	const  incrementQuantity  = (name) => {
 		const  index  =  shoppingList.findIndex((item) =>  item.name ===  name);
 		const  newList  = [...shoppingList];
@@ -161,7 +161,7 @@ const  Item  = ({ name, quantity, setShoppingList, shoppingList }) => {
 		setShoppingList(newList);
 	};
 
-	const  decrementQuantity  = (name) => {
+    const  decrementQuantity  = (name) => {
 		const  index  =  shoppingList.findIndex((item) =>  item.name ===  name);
 		if (shoppingList[index].quantity ===  1) {
 			const  newList  =  shoppingList.filter((item, ind) =>  ind  !==  index);
@@ -172,12 +172,16 @@ const  Item  = ({ name, quantity, setShoppingList, shoppingList }) => {
 			setShoppingList(newList);
 		}
 	};
-	return (
-			...
-				<button onClick={() =>  decrementQuantity(name)} >-</button>
+    
+    return (
+		<div className="item">
+			<p>{name}</p>
+			<span>
+				<button onClick={() => decrementQuantity(name) } >-</button> //decrement
 				<p>{quantity}</p>
-				<button onClick={() =>  incrementQuantity(name)} >+</button>
-			...
+				<button onClick={() =>  incrementQuantity(name)} >+</button> //increment
+			</span>
+		</div>
 	);
 };
 export  default  Item;
