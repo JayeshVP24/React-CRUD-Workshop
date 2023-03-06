@@ -52,7 +52,7 @@ useEffect(() => {
 	<h1>Shopping list 🛒 </h1>
 	<div  className="list">
 		{shoppingList.map((item) => ( //iterate over the shoppingList array
-			{item.name}
+			<p>{item.name}</p>
 			//Item Component here
 		))}
 	</div>
