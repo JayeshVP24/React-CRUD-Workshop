@@ -193,6 +193,7 @@ export  default  Item;
 ### Writing the Add Item Form Component
 /src/components/AddItemForm.jsx
 ```js
+import React from "react";
 const  AddItemForm  = ({shoppingList, setShoppingList) => {
 	return (
 		<form
@@ -213,6 +214,7 @@ export  default  AddItemForm;
 ```
 ### Write Add Item Form Component Logic
 ```js
+import React from "react";
 const  AddItemForm  = () => {
 	const  addItem  = (name, quantity) => {
 		if (shoppingList.find((item) =>  item.name ===  name)) {
@@ -247,6 +249,7 @@ export default AddItemForm
 ```
 ### Final - Import all components
 ```js
+import React, {useState} from "react";
 import Item from  "./components/Item";
 import AddItemForm from  "./components/AddItemForm";
 
