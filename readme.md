@@ -139,6 +139,7 @@ Create file *Item.jsx* in *components* folder
 **Note: First letter of component file is capital. E.g. Item.jsx- First letter i must be capital**
 /src/components/Item.jsx
 ```js
+import React from "react";
 const  Item  = ({ name, quantity }) => {
 	return (
 		<div className="item">
@@ -157,6 +158,7 @@ export  default  Item;
 ### Updating or Deleting the Item
 /src/components/Item.jsx
 ```js
+import React from "react";
 const  Item  = ({ name, quantity, shoppingList, setShoppingList }) => {
 	const  incrementQuantity  = (name) => {
 		const  index  =  shoppingList.findIndex((item) =>  item.name ===  name);
