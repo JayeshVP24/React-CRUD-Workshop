@@ -164,7 +164,7 @@ const  Item  = ({ name, quantity, shoppingList, setShoppingList }) => {
 		setShoppingList(newList);
 	};
 
-    const  decrementQuantity  = (name) => {
+	const  decrementQuantity  = (name) => {
 		const  index  =  shoppingList.findIndex((item) =>  item.name ===  name);
 		if (shoppingList[index].quantity ===  1) {
 			const  newList  =  shoppingList.filter((item, ind) =>  ind  !==  index);
@@ -180,9 +180,9 @@ const  Item  = ({ name, quantity, shoppingList, setShoppingList }) => {
 		<div className="item">
 			<p>{name}</p>
 			<span>
-				<button onClick={() => decrementQuantity(name) } >-</button> //decrement
+				<button onClick={() => decrementQuantity(name) } >-</button>
 				<p>{quantity}</p>
-				<button onClick={() =>  incrementQuantity(name)} >+</button> //increment
+				<button onClick={() =>  incrementQuantity(name)} >+</button>
 			</span>
 		</div>
 	);
@@ -249,13 +249,17 @@ import Item from  "./components/Item";
 import AddItemForm from  "./components/AddItemForm";
 
 function  App() {
-...
-...
+const [shoppingList, setShoppingList] =  useState([]);
+
+useEffect(() => {
+	// fetch data from ap
+	setShoppingList(shoppingListPre);
+}, []);
 return (
 	<div  className="App">
 		<h1>Shopping list 🛒 </h1>
 		<div  className="list">
-			{shoppingList.map((item) => ( //map over the shoppingList array
+			{shoppingList.map((item) => ( 
 				<Item
 					name={item.name}
 					quantity={item.quantity}
@@ -270,5 +274,7 @@ return (
 	);
 }
 ```
+
+export default App
 ### Done
 ![Output ](https://ik.imagekit.io/okaydokeymypath/React_CRUD_Workshop/Screenshot1.png)
