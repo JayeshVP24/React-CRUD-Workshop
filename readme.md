@@ -242,6 +242,8 @@ const  AddItemForm  = () => {
 		</form>
 	);
 };
+
+export default AddItemForm
 ```
 ### Final - Import all components
 ```js
@@ -273,6 +275,8 @@ return (
 	</div>
 	);
 }
+
+export default App
 ```
 
 export default App
