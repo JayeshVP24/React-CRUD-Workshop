@@ -63,6 +63,7 @@ useEffect(() => {
 </div>
 ```
 ### Write Initial CSS
+**Remove everything in App.css and replace it with the following code**
 /src/App.css
 ```css
 #root {
