@@ -194,7 +194,7 @@ export  default  Item;
 /src/components/AddItemForm.jsx
 ```js
 import React from "react";
-const  AddItemForm  = ({shoppingList, setShoppingList) => {
+const  AddItemForm  = ({shoppingList, setShoppingList}) => {
 	return (
 		<form
 			onSubmit={(e) => {
@@ -215,7 +215,7 @@ export  default  AddItemForm;
 ### Write Add Item Form Component Logic
 ```js
 import React from "react";
-const  AddItemForm  = () => {
+const  AddItemForm  = ({shoppingList, setShoppingList}) => {
 	const  addItem  = (name, quantity) => {
 		if (shoppingList.find((item) =>  item.name ===  name)) {
 			const  index  =  shoppingList.findIndex((item) =>  item.name ===  name);
@@ -249,7 +249,7 @@ export default AddItemForm
 ```
 ### Final - Import all components
 ```js
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import Item from  "./components/Item";
 import AddItemForm from  "./components/AddItemForm";
 
@@ -260,6 +260,22 @@ useEffect(() => {
 	// fetch data from ap
 	setShoppingList(shoppingListPre);
 }, []);
+
+const  shoppingListPre  = [
+	{
+		name: "Pizza 🍕",
+		quantity: 4,
+	},
+	{
+		name: "Burger 🍔",
+		quantity: 2,
+	},
+	{
+		name: "Pasta 🍝",
+		quantity: 6,
+	},
+];
+
 return (
 	<div  className="App">
 		<h1>Shopping list 🛒 </h1>
