@@ -255,6 +255,7 @@ export default AddItemForm
 import React, {useState, useEffect} from "react";
 import Item from  "./components/Item";
 import AddItemForm from  "./components/AddItemForm";
+import "./App.css"
 
 function  App() {
 const [shoppingList, setShoppingList] =  useState([]);
