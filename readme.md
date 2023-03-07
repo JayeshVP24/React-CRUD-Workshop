@@ -1,25 +1,29 @@
 # React CRUD Workshop 🛒
 ##  Steps to run this project ⛷️
-1. `npm install -g yarn`
-2. `git clone https://github.com/JayeshVP24/React-CRUD-Workshop.git`
-3. `cd React-CRUD-Workshop`
-4. `yarn`
-5. `yarn dev`
+1. *Open Terminal as Administrator*
+2. Run `npm install -g yarn`
+3. *Close the terminal and open normal administrator in your projects folder*
+4. `git clone https://github.com/JayeshVP24/React-CRUD-Workshop.git`
+5. `cd React-CRUD-Workshop`
+6. `yarn`
+7. `yarn dev`
 
 ## Guide
 ### Setup new React Project
-1. `npm install -g yarn`
-2. `yarn create vite`
+1. *Open Terminal as Administrator*
+2. Run `npm install -g yarn`
+3. *Close the terminal and open normal administrator in your projects folder*
+4. `yarn create vite`
 	1. *Enter Project name*
 	2. *Select React.js*
-3. `cd project_name`
-4. `yarn`
-5. `yarn dev`
+5. `cd project_name`
+6. `yarn`
+7. `yarn dev`
 ### Delete unnecessary content
 In App.js, delete everything in div `<div className="App">`
 ### Predefined Data
+/src/App.js above function App()
 ```  js
-// src/App.js
 const  shoppingListPre  = [
 	{
 		name: "Pizza 🍕",
@@ -36,8 +40,8 @@ const  shoppingListPre  = [
 ];
 ```
 ### Initializing Data Structure
+/src/App.js - inside App function
 ```js
-// src/App.js - inside App function
 const [shoppingList, setShoppingList] =  useState([]);
 
 useEffect(() => {
@@ -46,22 +50,21 @@ useEffect(() => {
 }, []);
 ```
 ### Write Initial HTML
+/ src/App.js - inside return of App function
 ```js
-// src/App.js - inside return of App function
 <div  className="App">
 	<h1>Shopping list 🛒 </h1>
 	<div  className="list">
-		{shoppingList.map((item) => ( //iterate over the shoppingList array
+		{shoppingList.map((item) => ( 
 			<p>{item.name}</p>
 			//Item Component here
 		))}
 	</div>
-	//Add Item Form Component here
 </div>
 ```
 ### Write Initial CSS
+/src/App.css
 ```css
-/// src/App.css
 #root {
 	margin: 0  auto;
 	padding: 2rem;
@@ -133,16 +136,16 @@ input {
 Create folder named *components* in *src* folder 
 Create file *Item.jsx* in *components* folder
 **Note: First letter of component file is capital. E.g. Item.jsx- First letter i must be capital**
+/src/components/Item.jsx
 ```js
-// src/components/Item.jsx
 const  Item  = ({ name, quantity }) => {
 	return (
 		<div className="item">
 			<p>{name}</p>
 			<span>
-				<button>-</button> //decrement
+				<button>-</button>
 				<p>{quantity}</p>
-				<button>+</button> //increment
+				<button>+</button>
 			</span>
 		</div>
 	);
@@ -151,8 +154,8 @@ export  default  Item;
 ```
 **Function name must also start with captial letter, and be same as File name**
 ### Updating or Deleting the Item
+/src/components/Item.jsx
 ```js
-// src/components/Item.jsx
 const  Item  = ({ name, quantity, shoppingList, setShoppingList }) => {
 	const  incrementQuantity  = (name) => {
 		const  index  =  shoppingList.findIndex((item) =>  item.name ===  name);
@@ -188,8 +191,8 @@ export  default  Item;
 
 ```
 ### Writing the Add Item Form Component
+/src/components/AddItemForm.jsx
 ```js
-// src/components/AddItemForm.jsx
 const  AddItemForm  = ({shoppingList, setShoppingList) => {
 	return (
 		<form
